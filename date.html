@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you go on a date with me?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/15889ac470.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <style>
+        img{
+            height:300px;
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head-container">
+        <header style="display: flex;align-items: center;justify-content: center;"><i class="fa-solid fa-heart fa-beat fa-xs" style="color: #fa0000;margin-right: 10px;"></i>
+        Hey Jeniffer Jerrin!!!<i class="fa-solid fa-heart fa-beat fa-xs" style="color: #fa0000;margin-left: 10px;"></i></header>
+    </div>
+    <div id="question" class="main-container">
+        <img src="ask.gif" alt="Will you go out with me?">
+        <h1>Will you go out with me azaghii??</h1>
+        <div class="buttons">
+            <button id="yesButton" onclick="yes()">Yes</button>
+            <button id="noButton" onmouseover="move()" onclick="move()">No</button>
+        </div>
+    </div>
+    <div id="yes" style="display: none;" class="yes-container">
+        <img src="ans.gif" alt="Yayyyyy!!!">
+        <h1>Yayyyyy!!! Date fixeddd😍😍😍😍😍😍!!!</h1>
+    </div>
+    <script>
+
+        function move(){
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
+        };
+
+        var nobttn=document.getElementById("noButton");
+        var arr=["Eiii noo sollatha dii pleech freddy pavam la🥹",
+        "Papa kutty yes sollunga!!😍😍😍😍😍",
+        "No is not an option papa!!😂😂",
+        "Yes sollu surprise irukku 😌😌😌"];
+        var i = 0;
+
+    nobttn.addEventListener("mouseenter", function() {
+    nobttn.textContent = arr[i];
+    i = (i + 1) % arr.length; 
+    });
+
+    var yesbttn=document.getElementById("yesButton");
+    var yescont=document.getElementById("yes");
+    var questcont=document.getElementById("question");
+        yesbttn.addEventListener("click",function(){
+            questcont.style.display="none";
+            yescont.style.display="block";
+        });
+    
+    </script>
+</body>
+</html>
